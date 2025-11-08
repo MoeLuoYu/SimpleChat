@@ -1,0 +1,19 @@
+name: SimpleChat
+version: 1.0
+main: xyz.moeluoyu.simplechat.SimpleChat
+api-version: 1.21
+author: moeluoyu
+description: 在聊天消息的玩家名前添加自定义格式
+website: https://github.com/moeluoyu/SimpleChat
+soft-depend: [PlaceholderAPI]
+
+commands:
+  simplechat:
+    description: SimpleChat主命令
+    usage: /simplechat reload
+    permission: simplechat.admin
+
+permissions:
+  simplechat.admin:
+    description: SimpleChat管理权限
+    default: op
