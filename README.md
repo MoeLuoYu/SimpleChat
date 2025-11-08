@@ -39,7 +39,7 @@
 # %player_exp% - 玩家经验百分比 (整数)
 # %player_gamemode% - 玩家游戏模式
 #
-# 如果安装了PlaceholderAPI，可以使用其提供的所有占位符
+# 如果安装了PlaceholderAPI，可以使用其提供的所有变量
 format: '&7[&eLv&c.&a%player_level%&7]'
 
 # 玩家名格式 (可选)
@@ -56,7 +56,7 @@ enabled: true
 # 是否在控制台显示调试信息
 debug: false
 
-# 占位符设置
+# 变量设置
 placeholders:
   # 如果玩家等级获取失败，使用默认值
   default_level: '0'
@@ -144,9 +144,9 @@ ignore_placeholderapi: true
 
 - `simplechat.admin` - 使用SimpleChat管理命令的权限
 
-## 占位符
+## 变量
 
-### 基本占位符 (无需额外插件)
+### 基本变量 (无需额外插件)
 
 - `%player_name%` - 玩家名
 - `%player_displayname%` - 玩家显示名
@@ -159,7 +159,7 @@ ignore_placeholderapi: true
 
 ### PlaceholderAPI支持
 
-如果服务器安装了PlaceholderAPI插件，SimpleChat将自动支持所有PlaceholderAPI提供的占位符，例如：
+如果服务器安装了PlaceholderAPI插件，SimpleChat将自动支持所有PlaceholderAPI提供的变量，例如：
 
 - `%vault_rank%` - 玩家权限组
 - `%essentials_nickname%` - 玩家昵称
@@ -181,10 +181,10 @@ A: 请检查以下几点：
 3. 尝试使用`/simplechat reload`命令重载配置
 4. 开启debug模式查看详细日志
 
-### Q: 占位符不显示或显示为原始文本？
+### Q: 变量不显示或显示为原始文本？
 A: 请检查以下几点：
-1. 确保占位符格式正确，使用`%`符号包围
-2. 如果使用PlaceholderAPI的占位符，确保已安装PlaceholderAPI插件
+1. 确保变量格式正确，使用`%`符号包围
+2. 如果使用PlaceholderAPI的变量，确保已安装PlaceholderAPI插件
 3. 开启debug模式查看是否有错误信息
 
 ### Q: 如何与其他聊天插件兼容？
