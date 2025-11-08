@@ -105,23 +105,23 @@ format: '&6[&e%player_world%&6|&b%player_gamemode%&6]&f'
 #### 5. 自定义玩家名格式
 ```yaml
 format: '&7[VIP]&f'
-name_format: '&e%player_name%'
+name_format: '&f[&e%player_name%&f]'
 ```
-效果: `[VIP] <黄色玩家名> 消息内容`
+效果: `[VIP] [黄色玩家名] 消息内容`
 
 #### 6. 带权限组的玩家名
 ```yaml
 format: '&6[&e%player_world%&6]&f'
-name_format: '&7[%vault_rank%&f] &e%player_name%'
+name_format: '&7[%vault_rank%&f] &f[&e%player_name%&f]'
 ```
-效果: `[world] [管理员] <黄色玩家名> 消息内容`
+效果: `[world] [管理员] [黄色玩家名] 消息内容`
 
 #### 7. 禁用前缀，只修改玩家名
 ```yaml
 format: ''
-name_format: '&b[&a%player_level%&b] &f%player_name%'
+name_format: '&b[&a%player_level%&b] &f[&e%player_name%&f]'
 ```
-效果: `[等级] <玩家名> 消息内容`
+效果: `[等级] [黄色玩家名] 消息内容`
 
 #### 8. 关闭插件加载时打印的ASCII艺术字
 ```yaml
