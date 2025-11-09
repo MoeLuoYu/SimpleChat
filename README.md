@@ -168,8 +168,8 @@ ignore_placeholderapi: true
 
 ## 兼容性
 
-- Minecraft版本: 1.21
-- 依赖: Spigot API 1.21
+- Minecraft版本: 1.12+
+- 开发版本为1.21.4，已测试1.12+可正常运行，不确保更早版本的Minecraft能正常运行，如您想要尝试可以将plugin.yml中的api-version注释或删除掉，此操作带来的问题将不做处理
 - 可选依赖: PlaceholderAPI
 
 ## 常见问题
