@@ -1,6 +1,5 @@
 name: SimpleChat
 version: 1.1
-load: STARTUP
 main: xyz.moeluoyu.simplechat.SimpleChat
 author: moeluoyu
 description: 自定义聊天格式
@@ -18,4 +17,5 @@ permissions:
   simplechat.admin:
     description: SimpleChat管理权限
     default: op
+
 
