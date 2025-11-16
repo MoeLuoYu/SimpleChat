@@ -47,54 +47,62 @@
 # %player_exp% - 玩家经验百分比 (整数)
 # %player_gamemode% - 玩家游戏模式
 #
+# 前缀和名称格式均支持<hover>和<click>标签
+# <hover>标签支持的操作：
+# show_text - 显示文本
+# N_L - 换行符
+# <click>标签支持的操作：
+# copy - 复制文本
+# suggest_command - 建议命令(将命令直接打在聊天框中但不执行)
+# run_command - 执行命令
+# open_url - 打开URL
+#
 # 如果安装了PlaceholderAPI，可以使用其提供的所有变量
-format: '&7[&eLv&c.&a%player_level%&7]'
+
+# 是否启用插件格式修改
+enabled: true
+
+# 聊天消息前缀格式 (可选)
+format: "<hover:show_text:'%player_displayname%':N_L:'玩家等级: %player_level%'>&7[&eLv&c.&a%player_level%&7]&r <hover:show_text:'点击传送到该玩家':N_L:'玩家所在世界: %player_world%'><click:suggest_command:'/tpa %player_name%'>&7[&f%player_world%&7]"
 
 # 玩家名格式 (可选)
-# 留空则使用原版玩家名
-# 示例:
-# 1. 彩色玩家名: '&e%player_name%'
-# 2. 带括号的玩家名: '&f[&a%player_name%&f]'
-# 3. 带权限组的玩家名: '&7[%vault_rank%&f] &e%player_name%'
-name_format: ''
+name_format: "<hover:show_text:'点击私聊玩家'><click:suggest_command:'/msg %player_name%'>&f<%player_name%>&r"
 
-# 消息分隔符 (可选)
-# 用于分隔玩家名和聊天内容
-# 支持颜色代码和变量
+# 消息分隔符 (玩家名和聊天内容之间的分隔符)
+# 留空则不显示分隔符
 # 示例:
 # 1. 默认冒号: ': '
 # 2. 无分隔符: ''
-# 3. 其他分隔符: ' | '
-# 4. 带颜色分隔符: '&7: &f'
-# 5. 带变量分隔符: '&7[%player_world%&7] &7>>&f '
+# 3. 其他分隔符: ' >> '
+# 4. 带颜色的分隔符: '&7: &f'
 message_separator: ''
-
-# 是否启用插件
-enabled: true
 
 # 是否在控制台显示调试信息
 debug: false
 
-# 变量设置
+# 默认变量设置
 placeholders:
   # 如果玩家等级获取失败，使用默认值
-  default_level: '0'
+  default_level: '?'
   # 如果玩家血量获取失败，使用默认值
-  default_health: '20'
+  default_health: '?'
   # 如果玩家饥饿值获取失败，使用默认值
-  default_food: '20'
+  default_food: '?'
   # 如果玩家经验获取失败，使用默认值
-  default_exp: '0'
+  default_exp: '?'
   # 如果玩家游戏模式获取失败，使用默认值
-  default_gamemode: 'survival'
+  default_gamemode: '?'
 
-# 是否显示ASCII艺术字
+# 是否显示插件载入时ASCII艺术字
 ascii: true
 
 # 我已了解且不再需要安装PlaceholderAPI，请不要为我提示安装它的建议
 ignore_placeholderapi: false
 
 # 链接检测设置
+# 注意：使用此功能时尽量不使用违禁词检测插件
+# 或将常见前后缀设置白名单
+# 否则可能会影响链接正常识别
 link_detection:
   # 是否启用链接检测
   enabled: true
