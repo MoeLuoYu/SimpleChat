@@ -209,8 +209,6 @@ SimpleChat支持Tab补全功能，输入`/simplechat`后按Tab键可以自动补
 
 - `%vault_rank%` - 玩家权限组
 - `%essentials_nickname%` - 玩家昵称
-- `%player_money%` - 玩家金钱
-- `%factions_uuid_faction_tag%` - 玩家派系标签
 
 ## 兼容性
 
