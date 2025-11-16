@@ -56,7 +56,7 @@ public class SimpleChatCommand implements CommandExecutor, TabCompleter {
         sender.sendMessage(ChatColor.YELLOW + "===== SimpleChat 帮助 =====");
         sender.sendMessage(ChatColor.YELLOW + "/simplechat reload - 重载配置文件");
         sender.sendMessage(ChatColor.YELLOW + "/simplechat - 显示此帮助消息");
-        sender.sendMessage(ChatColor.LIGHT_PURPLE + "©MoeLuoYu 严禁反编译盗取代码");
+        sender.sendMessage(ChatColor.LIGHT_PURPLE + "©MoeLuoYu 严禁反编译盗取代码，二开请前往GitHub，修改请标明原作者");
         sender.sendMessage(ChatColor.AQUA + "就这些了，简单到不能再简单了(⑅˃◡˂⑅)");
     }
 
@@ -97,4 +97,5 @@ public class SimpleChatCommand implements CommandExecutor, TabCompleter {
         }
         return matches;
     }
+
 }
