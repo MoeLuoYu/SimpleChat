@@ -28,6 +28,8 @@
   <a href="https://github.com/MoeLuoYu/SimpleChat/wiki">📖Docs</a>
   ·
   <a href="https://www.minebbs.com/resources/simplechat-papi.14058/">⬇️MineBBS</a>
+  ·
+  <a href="https://github.com/MoeLuoYu/SimpleChat/releases/latest">⬇️Releases</a>
 </p>
 
 ## 介绍
