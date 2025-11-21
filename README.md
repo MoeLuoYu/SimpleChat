@@ -62,10 +62,10 @@
 ## 兼容性
 
 请确保使用Spigot/Paper/Purpur(Leaves) 1.12.2版本以上
-低版本我们不确定会出现什么问题，也请不要提交issues
+我们也不确定低版本会出现什么问题，也请不要提交issues
 如您需要跨服聊天请确保Redis≥6.0
 
-## 特别感谢
+## 特别鸣谢
 
 - [`@PlaceholderAPI`](https://github.com/PlaceholderAPI)：提供了丰富的变量扩展功能，使玩家可以在聊天消息中使用更多的变量。
 - [`@SpigotMC/Spigot-API`](https://github.com/SpigotMC/Spigot-API)：`Minecraft` 服务器端 API
