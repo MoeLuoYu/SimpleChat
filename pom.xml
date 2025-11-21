@@ -6,7 +6,7 @@
 
     <groupId>xyz.moeluoyu.simplechat</groupId>
     <artifactId>SimpleChat</artifactId>
-    <version>1.3</version>
+    <version>2.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -25,7 +25,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.21.1-R0.1-SNAPSHOT</version>
+            <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -44,6 +44,17 @@
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>26.0.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>3.0.2</version>
             <scope>compile</scope>
         </dependency>
     </dependencies>
@@ -78,7 +89,19 @@
                                         <exclude>META-INF/**</exclude>
                                     </excludes>
                                 </filter>
+                                <filter>
+                                    <artifact>org.bstats:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
                             </filters>
+                            <relocations>
+                                <relocation>
+                                    <pattern>org.bstats</pattern>
+                                    <shadedPattern>xyz.moeluoyu.simplechat.libs.bstats</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
@@ -91,7 +114,19 @@
                                 <exclude>META-INF/**</exclude>
                             </excludes>
                         </filter>
+                        <filter>
+                            <artifact>org.bstats:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/**</exclude>
+                            </excludes>
+                        </filter>
                     </filters>
+                    <relocations>
+                        <relocation>
+                            <pattern>org.bstats</pattern>
+                            <shadedPattern>xyz.moeluoyu.simplechat.libs.bstats</shadedPattern>
+                        </relocation>
+                    </relocations>
                 </configuration>
             </plugin>
         </plugins>
