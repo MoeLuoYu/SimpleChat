@@ -1,0 +1,189 @@
+# SimpleChat配置文件
+# 在聊天消息的玩家名前添加的格式
+# 
+# 示例格式:
+# 1. 简单文本: '&7[VIP]&f'
+# 2. 带玩家名: '&6[&e%player_name%&6]&f'
+# 3. 带世界名: '&a[%player_world%]&f'
+# 4. 使用PlaceholderAPI: '&7[%vault_rank%]&f'
+# 5. 原始示例: '&7[&eLv&c.&a%player_level%&7]'
+# 6. 禁用前缀: ''
+#
+# 可用基本变量 (无需PlaceholderAPI):
+# %player_name% - 玩家名
+# %player_displayname% - 玩家显示名
+# %player_world% - 玩家所在世界
+# %player_level% - 玩家等级
+# %player_health% - 玩家血量 (整数)
+# %player_food% - 玩家饥饿值 (整数)
+# %player_exp% - 玩家经验百分比 (整数)
+# %player_gamemode% - 玩家游戏模式
+# %player_server% - 玩家所在的服务器标识符 (优先级高于PlaceholderAPI)
+# %player_server_alias% - 服务器标识符，只取第一个字符（小写）
+# %player_server_alias_uppercase% - 服务器标识符，只取第一个字符（大写）
+#
+# 私聊消息额外变量:
+# %sender_name% - 发送者玩家名
+# %sender_displayname% - 发送者显示名
+# %sender_world% - 发送者所在世界
+# %receiver_name% - 接收者玩家名
+# %receiver_displayname% - 接收者显示名
+# %receiver_world% - 接收者所在世界
+#
+# /say命令变量:
+# %sender_name% - 发送者玩家名
+# %sender_displayname% - 发送者显示名
+# %sender_world% - 发送者所在世界
+#
+# 前缀和名称格式均支持<hover>和<click>标签
+# <hover>标签支持的操作：
+# show_text - 显示文本
+# N_L - 换行符
+# <click>标签支持的操作：
+# copy - 复制文本
+# suggest_command - 建议命令(将命令直接打在聊天框中但不执行)
+# run_command - 执行命令
+# open_url - 打开URL
+#
+# 如果安装了PlaceholderAPI，可以使用其提供的所有变量
+# 详细信息请参考PlaceholderAPI文档
+
+# 是否启用插件格式修改
+enabled: true
+# 插件载入时ASCII艺术字
+ascii:
+  # 是否启用
+  enabled: true
+  # 字体颜色(仅支持Minecraft原版颜色)
+  color: 'GREEN'
+# 我已了解且不再需要安装PlaceholderAPI，请不要为我提示安装它的建议
+ignorePlaceholderApi: false
+# 聊天消息前缀格式 (可选)
+# 留空则不附加前缀
+format: "<hover:show_text:%player_displayname%:N_L:玩家等级: %player_level%>&7[&eLv&c.&a%player_level%&7]&r <hover:show_text:点击传送到该玩家:N_L:玩家所在世界: %player_world%><click:suggest_command:/tpa %player_name%>&7[&f%player_world%&7]"
+# 玩家名格式 (可选)
+# 留空则使用原版玩家名
+nameFormat: "<hover:show_text:点击私聊玩家><click:suggest_command:/msg %player_name%>&f<%player_name%>&r"
+# 私聊消息格式
+privateMessage:
+  # 发送者看到的私聊格式
+  senderFormat: "&f✉&a⬆ <hover:show_text:点击追加私聊><click:suggest_command:/msg %receiver_name%>&b你 &7-> &e%receiver_name%&7: &r"
+  # 接收者看到的私聊格式
+  receiverFormat: "&f✉&a⬇ <hover:show_text:点击回复><click:suggest_command:/msg %sender_name%>&b%sender_name% &7-> &e你&7: &r"
+# /say命令格式
+sayCommand:
+  # /say命令的格式
+  format: "&f%sender_name%&7: &r"
+  # 控制台/say命令的格式
+  consoleFormat: "&c[&6CONSOLE&c] &r"
+# @提及设置
+at:
+  # 是否启用@提及
+  enabled: true
+  # @提及格式
+  # 使用方法: 在聊天中直接@玩家名即可触发@提及
+  # @提及会直接将@玩家名替换为format中的内容
+  format: "&b@%player_name%"
+  # @提及声音设置
+  sound:
+    # 是否启用@提及声音
+    # 此项只针对被@者播放，发送者不会播放
+    enabled: true
+    # @提及声音类型
+    type: 'ENTITY_PLAYER_LEVELUP'
+    # 声音冷却时间 (秒)
+    cooldown: 5
+# 消息分隔符 (玩家名和聊天内容之间的分隔符)
+# 留空则不显示分隔符
+# 示例:
+# 1. 默认冒号: ': '
+# 2. 无分隔符: ''
+# 3. 其他分隔符: ' >> '
+# 4. 带颜色的分隔符: '&7: &f'
+messageSeparator: ' '
+# 默认变量设置
+placeholders:
+  # 如果玩家等级获取失败，使用默认值
+  defaultLevel: '?'
+  # 如果玩家血量获取失败，使用默认值
+  defaultHealth: '?'
+  # 如果玩家饥饿值获取失败，使用默认值
+  defaultFood: '?'
+  # 如果玩家经验获取失败，使用默认值
+  defaultExp: '?'
+  # 如果玩家游戏模式获取失败，使用默认值
+  defaultGamemode: '?'
+# 链接检测设置
+# 注意：使用此功能时尽量不使用违禁词检测插件
+# 或将常见前后缀设置白名单
+# 否则可能会影响链接正常识别
+linkDetection:
+  # 是否启用链接检测
+  enabled: true
+# 号码检测设置
+numberDetection:
+  # 是否启用号码检测
+  enabled: true
+  # 号码检测范围
+  pattern:
+    # 号码检测最小长度
+    min: 5
+    # 号码检测最大长度
+    max: 13
+# 跨服聊天
+# 注意：您需要购买SimpleChatPlus许可证才能启用跨服聊天功能
+redisChat:
+  # 是否启用Redis聊天
+  enabled: false
+  # Redis服务器地址
+  host: 'localhost'
+  # Redis服务器端口
+  port: 6379
+  # Redis数据库索引
+  database: 0
+  # Redis密码 (如果有)
+  password: ''
+  # 服务器标识符 (用于区分不同服务器)
+  serverId: 'server1'
+  # Redis频道名称
+  channel: 'simplechat'
+  # 是否在控制台记录其他服务器的聊天消息
+  logOtherServers: true
+  # 控制台记录其他服务器聊天消息的颜色
+  consoleColor: 'GREEN'
+  # 是否清除click操作
+  # 建议此操作，因为click操作会导致跨服聊天内容被执行
+  # 而跨服聊天执行命令通常找不到目标玩家，会导致命令执行失败
+  # 此项为false时，关键词设置将失效
+  clearClick: true
+  # 跨服聊天内容时忽略的关键字hover内容
+  # 例如传送了hover标签包含了: '点击打开链接'，则会忽略该行文字
+  ignoreKeywords:
+    - '点击'
+    - 'click'
+  # 忽略白名单 (如果设置了白名单，则不会忽略白名单中的内容)
+  whitelistKeywords:
+    - '点击打开链接'
+    - '点击复制'
+    - '打开URL'
+    - '复制内容'
+# 聊天功能设置
+chat:
+  # 聊天颜色设置
+  color:
+    enabled: true
+  # 聊天格式设置
+  format:
+    enabled: true
+  # @提及功能
+  mention:
+    enabled: true
+  # 忽略聊天功能
+  ignore:
+    enabled: true
+  # 绕过聊天功能
+  bypass:
+    enabled: true
+  # JSON格式设置
+  json:
+    enabled: false

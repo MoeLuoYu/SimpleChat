@@ -1,0 +1,27 @@
+name: SimpleChat
+version: 2.0
+main: xyz.moeluoyu.simplechat.SimpleChat
+author: MoeLuoYu
+description: 一个简单的并支持跨服聊天的聊天插件
+website: https://github.com/moeluoyu/SimpleChat
+soft-depend: [PlaceholderAPI]
+
+commands:
+  simplechat:
+    description: SimpleChat主命令
+    usage: /simplechat reload
+    aliases: [sc]
+    permission: simplechat.admin
+  msg:
+    description: 发送私聊消息
+    usage: '§c/<command> <player> <message>'
+    aliases: [message, tell, w]
+  reply:
+    description: 回复私聊消息
+    usage: '§c/<command> <message>'
+    aliases: [r]
+
+permissions:
+  simplechat.admin:
+    description: SimpleChat管理权限
+    default: op
