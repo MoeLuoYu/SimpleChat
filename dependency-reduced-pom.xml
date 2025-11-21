@@ -3,8 +3,9 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>xyz.moeluoyu.simplechat</groupId>
   <artifactId>SimpleChat</artifactId>
-  <version>1.0</version>
+  <version>2.0</version>
   <build>
+    <defaultGoal>clean package</defaultGoal>
     <resources>
       <resource>
         <filtering>true</filtering>
@@ -13,16 +14,70 @@
     </resources>
     <plugins>
       <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+        </configuration>
+      </plugin>
+      <plugin>
         <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.4</version>
+        <version>3.4.1</version>
         <executions>
           <execution>
             <phase>package</phase>
             <goals>
               <goal>shade</goal>
             </goals>
+            <configuration>
+              <minimizeJar>true</minimizeJar>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/**</exclude>
+                  </excludes>
+                </filter>
+                <filter>
+                  <artifact>org.bstats:*</artifact>
+                  <excludes>
+                    <exclude>META-INF/**</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+              <relocations>
+                <relocation>
+                  <pattern>org.bstats</pattern>
+                  <shadedPattern>xyz.moeluoyu.simplechat.libs.bstats</shadedPattern>
+                </relocation>
+              </relocations>
+            </configuration>
           </execution>
         </executions>
+        <configuration>
+          <minimizeJar>false</minimizeJar>
+          <filters>
+            <filter>
+              <artifact>*:*</artifact>
+              <excludes>
+                <exclude>META-INF/**</exclude>
+              </excludes>
+            </filter>
+            <filter>
+              <artifact>org.bstats:*</artifact>
+              <excludes>
+                <exclude>META-INF/**</exclude>
+              </excludes>
+            </filter>
+          </filters>
+          <relocations>
+            <relocation>
+              <pattern>org.bstats</pattern>
+              <shadedPattern>xyz.moeluoyu.simplechat.libs.bstats</shadedPattern>
+            </relocation>
+          </relocations>
+        </configuration>
       </plugin>
     </plugins>
   </build>
@@ -36,7 +91,13 @@
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
-      <version>1.21.1-R0.1-SNAPSHOT</version>
+      <version>1.12.2-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>net.md-5</groupId>
+      <artifactId>bungeecord-chat</artifactId>
+      <version>1.20-R0.1</version>
       <scope>provided</scope>
     </dependency>
     <dependency>
