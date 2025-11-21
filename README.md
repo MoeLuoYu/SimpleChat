@@ -59,6 +59,12 @@
 
 请参考 [`Redis对接`](https://github.com/MoeLuoYu/SimpleChat/wiki/Redis对接) 部分的说明进行配置。
 
+## 兼容性
+
+请确保使用Spigot/Paper/Purpur(Leaves) 1.12.2版本以上
+低版本我们不确定会出现什么问题，也请不要提交issues
+如您需要跨服聊天请确保Redis≥6.0
+
 ## 特别感谢
 
 - [`@PlaceholderAPI`](https://github.com/PlaceholderAPI)：提供了丰富的变量扩展功能，使玩家可以在聊天消息中使用更多的变量。
