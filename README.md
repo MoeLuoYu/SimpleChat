@@ -8,9 +8,6 @@
 </p>
 
 <div align="center">
-
-# SimpleChat
-
 ✨ Minecraft 服务端 Plugin，修改玩家聊天消息格式，并支持聊天组件和跨服聊天 ✨
 
 </div>
