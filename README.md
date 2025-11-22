@@ -1,8 +1,4 @@
 <!--suppress HtmlDeprecatedAttribute -->
-<div align="right">
-🌍 中文
-</div>
-
 <p align="center">
   <img src="https://github.com/MoeLuoYu/SimpleChat/blob/main/Logo.png?raw=true" width="200" height="200" alt="SimpleChat">
 </p>
