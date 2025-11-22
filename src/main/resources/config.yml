@@ -131,7 +131,6 @@ numberDetection:
     # 号码检测最大长度
     max: 13
 # 跨服聊天
-# 注意：您需要购买SimpleChatPlus许可证才能启用跨服聊天功能
 redisChat:
   # 是否启用Redis聊天
   enabled: false
@@ -186,4 +185,5 @@ chat:
     enabled: true
   # JSON格式设置
   json:
+
     enabled: false
