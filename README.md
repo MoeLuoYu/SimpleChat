@@ -29,7 +29,7 @@
   ·
   <a href="https://www.minebbs.com/resources/simplechat-papi.14058/">⬇️MineBBS</a>
   ·
-  <a href="https://github.com/MoeLuoYu/SimpleChat/releases/latest">⬇️Releases</a>
+  <a href="https://www.spigotmc.org/resources/simplechat.130292/">⬇️SpigotMC</a>
 </p>
 
 ## 介绍
