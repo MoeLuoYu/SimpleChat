@@ -30,12 +30,13 @@ jobs:
     - name: Build with Maven
       run: mvn clean package -DskipTests --file pom.xml
       
-    - name: Debug - List files in target
-      run: ls -l target/
+    - name: Extract version from pom.xml
+      run: |
+        VERSION=$(xmlstarlet sel -N x=http://maven.apache.org/POM/4.0.0 -t -v '/x:project/x:version' pom.xml)
+        echo "PROJECT_VERSION=$VERSION" >> $GITHUB_ENV
 
     - name: Upload Maven Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: SimpleChat
-        path: target/*.jar
-          
+        name: SimpleChat-${{ env.PROJECT_VERSION }}
+        path: target/SimpleChat-${{ env.PROJECT_VERSION }}.jar
