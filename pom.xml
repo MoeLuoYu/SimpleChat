@@ -19,6 +19,11 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>helpchat-repo</id>
+            <name>HelpChat Maven Repository</name>
+            <url>https://repo.helpch.at/releases</url>
+        </repository>
     </repositories>
 
     <dependencies>
